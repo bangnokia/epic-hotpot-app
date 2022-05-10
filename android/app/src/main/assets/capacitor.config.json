@@ -1,0 +1,6 @@
+{
+	"appId": "com.epichotpot.app",
+	"appName": "Eic HOT POT",
+	"webDir": "dist",
+	"bundledWebRuntime": false
+}
