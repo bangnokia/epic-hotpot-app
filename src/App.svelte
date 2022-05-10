@@ -1,53 +1,14 @@
 <script lang="ts">
-    import logo from "./assets/svelte.png";
-    import Counter from "./lib/Counter.svelte";
+    import Button from "./Button.svelte";
+    import FireCircle from "./FireCircle.svelte";
 </script>
 
-<main>
-    <img src={logo} alt="Svelte Logo" />
-
-    <Counter />
+<main class="w-full h-screen flex flex-col justify-between">
+    <div class="pt-10 w-250px h-250px flex items-center justify-center mx-auto">
+        <FireCircle />
+    </div>
+    <div class="pb-10 flex items-center justify-center gap-5">
+        <Button>-</Button>
+        <Button>+</Button>
+    </div>
 </main>
-
-<style>
-    :root {
-        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-    }
-
-    main {
-        text-align: center;
-        padding: 1em;
-        margin: 0 auto;
-    }
-
-    img {
-        height: 16rem;
-        width: 16rem;
-    }
-
-    h1 {
-        color: #ff3e00;
-        text-transform: uppercase;
-        font-size: 4rem;
-        font-weight: 100;
-        line-height: 1.1;
-        margin: 2rem auto;
-        max-width: 14rem;
-    }
-
-    p {
-        max-width: 14rem;
-        margin: 1rem auto;
-        line-height: 1.35;
-    }
-
-    @media (min-width: 480px) {
-        h1 {
-            max-width: none;
-        }
-
-        p {
-            max-width: none;
-        }
-    }
-</style>
