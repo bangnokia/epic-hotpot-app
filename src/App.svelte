@@ -6,16 +6,42 @@
     let step = 100;
 
     function down() {
-        if (temp > 0) {
-            temp -= step;
-        }
+        temp = temp >= step ? temp - step : temp;
     }
     function up() {
         temp += step;
     }
+
+    function handleDown() {
+        console.log('click down')
+        down()
+    }
+
+    function handleUp() {
+        console.log('click up')
+        up();
+    }
+
+    let pressingUp;
+    let pressingUpInterval;
+    $: {
+        clearInterval(pressingUpInterval);
+        if (pressingUp) {
+            pressingUpInterval = setInterval(up, 100);
+        }
+    }
+
+    let pressingDown;
+    let pressingDownInterval;
+    $: {
+        clearInterval(pressingDownInterval);
+        if (pressingDown) {
+            pressingDownInterval = setInterval(down, 100);
+        }
+    }
 </script>
 
-<main class="font-mono w-full h-screen flex flex-col justify-around bg-gray-900">
+<main class="font-mono w-full h-screen flex flex-col justify-around bg-gray-900 select-none">
     <div class="h-1/3 shrink-0 grow-0 pt-10 w-250px h-250px flex items-center justify-center mx-auto">
         <FireCircle value={temp} {step} />
     </div>
@@ -29,7 +55,11 @@
         </div>
     </div>
     <div class="pb-10 flex items-center justify-center gap-5">
-        <Button on:click={down}>-</Button>
-        <Button on:click={up}>+</Button>
+        <Button on:click={handleDown}
+            on:longpress={() => (pressingDown = true)}
+            on:longpresscancel={(e) => (pressingDown = false)}>-</Button>
+        <Button on:click={handleUp}
+            on:longpress={() => (pressingUp = true)}
+            on:longpresscancel={(e) => (pressingUp = false)}>+</Button>
     </div>
 </main>
