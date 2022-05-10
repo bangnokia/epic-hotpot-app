@@ -1,13 +1,14 @@
 <script lang="ts">
     import Button from "./Button.svelte";
     import FireCircle from "./FireCircle.svelte";
-    import { fade } from "svelte/transition";
 
     let temp = 0;
     let step = 100;
 
     function down() {
-        temp -= step;
+        if (temp > 0) {
+            temp -= step;
+        }
     }
     function up() {
         temp += step;
@@ -21,7 +22,7 @@
     <div class="flex items-center justify-center">
         <div class="text-7xl font-bold text-center lining-nums">
             {#if temp > 0}
-                <span class="text-red-500" transition:fade>{temp}</span>
+                <span class="text-red-500">{temp}</span>
             {:else}
                 <span class="text-white">--</span>
             {/if}
