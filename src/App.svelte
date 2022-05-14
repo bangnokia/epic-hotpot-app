@@ -13,12 +13,10 @@
     }
 
     function handleDown() {
-        console.log('click down')
         down()
     }
 
     function handleUp() {
-        console.log('click up')
         up();
     }
 
