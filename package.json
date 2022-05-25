@@ -25,6 +25,7 @@
   "dependencies": {
     "@capacitor/android": "^3.5.1",
     "@capacitor/cli": "^3.5.1",
-    "@capacitor/core": "^3.5.1"
+    "@capacitor/core": "^3.5.1",
+    "@unocss/preset-web-fonts": "^0.34.1"
   }
 }

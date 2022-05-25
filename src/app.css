@@ -1,0 +1,10 @@
+@font-face {
+    font-family: 'Digital';
+    font-weight: 400;
+    src: url('/fonts/digital/DS-DIGI.TTF') format('truetype');
+}
+@font-face {
+    font-family: 'Digital';
+    font-weight: 700;
+    src: url('/fonts/digital/DS-DIGIB.TTF') format('truetype');
+}

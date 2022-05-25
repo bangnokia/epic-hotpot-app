@@ -13,7 +13,7 @@
     }
 
     function handleDown() {
-        down()
+        down();
     }
 
     function handleUp() {
@@ -44,7 +44,7 @@
         <FireCircle value={temp} {step} />
     </div>
     <div class="flex items-center justify-center">
-        <div class="text-7xl font-bold text-center lining-nums">
+        <div class="text-7xl font-digital font-bold text-center tabular-nums">
             {#if temp > 0}
                 <span class="text-red-500">{temp}</span>
             {:else}
@@ -53,11 +53,7 @@
         </div>
     </div>
     <div class="pb-10 flex items-center justify-center gap-5">
-        <Button on:click={handleDown}
-            on:longpress={() => (pressingDown = true)}
-            on:longpresscancel={(e) => (pressingDown = false)}>-</Button>
-        <Button on:click={handleUp}
-            on:longpress={() => (pressingUp = true)}
-            on:longpresscancel={(e) => (pressingUp = false)}>+</Button>
+        <Button on:click={handleDown} on:longpress={() => (pressingDown = true)} on:longpresscancel={(e) => (pressingDown = false)}>-</Button>
+        <Button on:click={handleUp} on:longpress={() => (pressingUp = true)} on:longpresscancel={(e) => (pressingUp = false)}>+</Button>
     </div>
 </main>
